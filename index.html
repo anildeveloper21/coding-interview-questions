@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Most important coding interview questions</h1>
+
+    <h3> >>>> Show the result of the following operations check console</h3>
+
+    <script>
+        let count = 0
+        for (let i = 2; i <= 100; i++) {
+            for (let j = 1; j <= i; j++) {
+                if (i % j == 0)
+                    count++
+            }
+            if (count == 2)
+                // console.log(i)
+            count = 0
+        }
+
+        function factorial(num){
+            if(num <= 1){
+                return 1
+            }
+            else{
+                return num * factorial(num - 1)
+            }
+        }
+        console.log(factorial(5));
+
+        function isPrime(num){
+            if(num <= 1){
+                return false
+            }
+            for(let i = 2; i < num; i++){
+               if(num % i === 0){
+                return false
+               }
+            }
+            return true
+        }
+        console.log(isPrime(7))
+
+        function fibnochi(num){
+           let fib = [0,1]
+           while(num > fib.length){
+            fib.push(fib[fib.length - 1] + fib[fib.length - 2])
+           }
+           return fib
+        }
+        console.log(fibnochi(5))
+
+        let title = "hello what are you doing";
+        let word = title.split(" ");
+        for(let i = 0; i < word.length; i++){
+            word[i] = word[i][0].toUpperCase() + word[i].substr(1)
+        }
+        word.join('');
+        console.log(word);
+
+        function isAnagram(str1, str2){
+            return str1.split('').sort().join('') === str2.split('').sort().join('')
+        }
+        console.log(isAnagram('silent', 'listen'));
+
+        function counOccurence(str){
+            let count = {};
+            for(let i = 0; i < str.length; i++){
+                if(count[str[i]]){
+                    count[str[i]]++
+                }
+                else{
+                    count[str[i]] = 1
+                }
+            }
+            return count
+        }
+        console.log(counOccurence('hello anil chaudhary'));
+
+        function removeDuplicates(arr){
+            return [... new Set(arr)]
+        }
+        console.log(removeDuplicates([1,2,3,1,2,3,4,5,6]));
+
+        function flattenArray(arr){
+            return arr.flat()
+        }
+        console.log(flattenArray([1,2,3,4,[5,6]]))
+
+        function secondLargest(arr){
+            arr.sort((a,b) => b - a)
+            return arr[1]
+        }
+        console.log(secondLargest([1,2,3,4,5,6,7,8]))
+
+        function largestWord(str){
+            let word = str.split(" ").sort((a,b) => b.length - a.length);
+            return word[0]
+        }
+        console.log(largestWord('hello developer sahab'));
+
+        function countVowel(str){
+            let vowel = "aeiouAEIOU"
+            let count = 0;
+            for(let char of str){
+                if(vowel.includes(char)){
+                    count++
+                }
+            }
+            return count
+        }
+        console.log(countVowel('anili'))
+
+
+    </script>
+</body>
+
+</html>
